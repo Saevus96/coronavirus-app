@@ -1,0 +1,6 @@
+<form *ngIf="selectedCase">
+    <label for="country">Chose report date: </label>
+    <select class="form-control form-control-md" id="country" name="country" [(ngModel)]="selectedCase" (change)="onChange()">
+    <option *ngFor="let case of coronavirusCases" [ngValue]="case" >{{case.reportDate | date : 'dd-MM-yyyy'}}</option>
+  </select>
+</form>

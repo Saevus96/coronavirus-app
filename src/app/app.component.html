@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="header">
+        <div class="header__title">COVID-19 Daily Reports</div>
+        <div class="header__icons">
+            <a href="https://www.facebook.com/WHO"><img class="header__icons--facebook" src="/assets/icons/facebook.svg" alt="facebook-image"></a>
+            <a href="https://twitter.com/who"><img class="header__icons--twitter" src="/assets/icons/twitter.svg" alt="twitter-image"></a>
+        </div>
+    </div>
+    <div class="components">
+        <div class="components__app-forms">
+            <app-country-list class="components__app-forms--country" (sendCountry)="receiveCountry($event)"></app-country-list>
+            <app-statistics-list class="components__app-forms--report" [country]="country" (sendCase)="receiveCase($event)"></app-statistics-list>
+        </div>
+        <app-statistics class="components__app-statistics" [case]="case" [country]="country"></app-statistics>
+    </div>
+</div>

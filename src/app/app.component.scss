@@ -1,0 +1,66 @@
+@import "../assets/colors.scss";
+.content {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    .header {
+        flex: 0 1 auto;
+        color: $color-accent;
+        background-color: $color-primary;
+        border-bottom: 1px solid #fff;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1em;
+        font-size: 1.8em;
+        padding: 0.5em;
+        &__title {
+            font-family: 'Lobster', cursive;
+        }
+        &__icons {
+            display: flex;
+            align-items: center;
+            &--facebook {
+                height: 1.5em;
+                margin-right: 0.5em;
+            }
+            &--twitter {
+                height: 1.5em;
+            }
+        }
+    }
+    .components {
+        height: 100%;
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: column;
+        &__app-forms {
+            flex: 0 1 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            color: $color-accent;
+            background: $color-primary-light;
+            &--country {
+                width: 50%;
+                margin-right: 1em;
+            }
+            &--report {
+                width: 50%;
+            }
+            @media(max-width: 550px) {
+                flex-direction: column;
+                &--country {
+                    width: 100%;
+                }
+                &--report {
+                    width: 100%;
+                }
+            }
+        }
+        &__app-statistics {
+            flex: 1 1 auto;
+        }
+    }
+}

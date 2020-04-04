@@ -1,0 +1,14 @@
+@import "assets/colors.scss";
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #C97C5D;
+}
+
+* {
+    box-sizing: border-box;
+}

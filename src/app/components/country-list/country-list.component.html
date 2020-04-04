@@ -1,0 +1,7 @@
+<form *ngIf='selectedCountry?.name'>
+    <label for="country">Chose your country</label>
+    <select class="form-control form-control-md" id="country" name="country" [(ngModel)]="selectedCountry" (change)="onChange()">
+    <option *ngFor="let country of countries" [ngValue]="country" >{{country.name}}
+      [{{country.alpha2Code}}] </option>
+  </select>
+</form>

@@ -1,0 +1,45 @@
+<div class="statistics">
+    <div class="statistics__country">
+        <div class="statistics__country--panel">
+            <div class="flag">
+                <img src="{{chosenCountry.flag}}" alt="flag-image">
+                <span>{{chosenCountry.name}}</span>
+            </div>
+            <img class="data-icon" src="/assets/icons/arrow_down.svg" [class.data-icon__active]="expand" (click)="expand = !expand">
+        </div>
+        <div class="statistics__country--details" [@expand]="expand ? 'expanded' : 'rolled'" [class.active]="expand">
+            <div class="single-detail"><span class="label"><img src="/assets/icons/place.svg"
+                        alt="place-image">Capital:</span>{{chosenCountry.capital}}</div>
+            <div class="single-detail"><span class="label"><img src="/assets/icons/people.svg" alt="people-image">
+                    Population:</span> {{chosenCountry.population}}</div>
+        </div>
+
+    </div>
+    <div class="statistics__case" *ngIf="chosenCase">
+        <div class="statistics__case--report-date single-case">
+            <img src="/assets/icons/calendar.svg" alt="calendar-image"><span class="move">Report Date</span>
+            <span>{{chosenCase.reportDate | date: 'dd-MM-yyyy'}} </span></div>
+        <div class="statistics__case--total-cases single-case">
+            <img src="/assets/icons/case.svg" alt="case-image"><span>All
+                Cases</span><span>{{chosenCase.totalCases}}</span>
+        </div>
+        <div class="statistics__case--new-daily-cases single-case">
+            <img src="/assets/icons/case.svg" alt="case-image "><span>Today
+                Cases</span><span>{{chosenCase.newDailyCases}}</span>
+        </div>
+        <div class="statistics__case--new-daily-deaths single-case">
+            <img src="/assets/icons/skull.svg" alt="skull-image"><span class="move">Today
+                Deaths</span><span>{{chosenCase.newDailyDeaths}}</span>
+        </div>
+        <div class="statistics__case--total-recoveries single-case">
+            <img src="/assets/icons/healing.svg" alt="healing-image"><span class="move">Recovered</span><span>{{chosenCase.totalRecoveries}}</span>
+        </div>
+        <div class="statistics__case--total-deaths single-case">
+            <img src="/assets/icons/skull.svg" alt="skull-image"><span class="move">All
+                Deaths</span><span>{{chosenCase.totalDeaths}}</span>
+        </div>
+    </div>
+    <div class="statistics__case" *ngIf="!chosenCase">
+        <div class="statistics__case--fail">Cases Not Registered</div>
+    </div>
+</div>
